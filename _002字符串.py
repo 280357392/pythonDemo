@@ -1,4 +1,7 @@
+import os
+
 # 定义字符串，字符串可以用双引号定义，也可以用单引号定义。支持灵活定义包含引号或撇号的字符串。
+
 name = "ada lovelace"
 # name = '"hello"'
 # name 变量指向一个已实例化的 str（class） 对象。(class str 定义在 builtins.py 模块中)
@@ -25,3 +28,21 @@ full_name2 = "{} {}".format(first_name, last_name)
 # print自带换行效果。
 print("\t 1")
 print("2\n ")
+
+
+# AI写代码
+# 遍历指定文件夹路径下的所有文件，然后重命名该文件。
+# 对文件夹没有影响
+def read_files_in_folder(folder_path, index):
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            os.rename(os.path.join(root, file), os.path.join(root, f"{index}.{get_file_extension(file)}"))
+            index += 1
+
+
+# 获取文件后缀名
+def get_file_extension(file_name):
+    return file_name.split(".")[-1] if "." in file_name else ""
+
+
+read_files_in_folder("D:\\IM", 1)
