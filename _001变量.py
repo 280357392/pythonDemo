@@ -4,6 +4,10 @@ print(message)
 # 修改变量
 message = "hello python world! 新的值"
 
+# 同时定义变量
+x, y, z = 1, 2, 3
+print(x, y, z)
+
 if __name__ == '__main__':  # 代码从上往下运行
     # 使用变量 message
     print(message)
